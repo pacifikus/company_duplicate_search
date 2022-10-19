@@ -1,0 +1,23 @@
+{
+  "mappings": {
+      "properties": {
+        "text": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "id": {
+          "type": "long"
+        },
+        "vector": {
+          "type": "dense_vector",
+          "dims": 384
+        }
+      }
+  }
+}
+

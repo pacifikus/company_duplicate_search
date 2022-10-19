@@ -1,0 +1,1 @@
+python src/index/indexer_elastic.py --config_path params.yaml

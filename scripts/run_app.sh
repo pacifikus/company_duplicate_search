@@ -1,0 +1,1 @@
+streamlit run src/search/search_companies.py

@@ -1,0 +1,1 @@
+python src/embedder/get_embedding.py --config_path params.yaml --dataset_path data/interim/preprocessed_data.csv

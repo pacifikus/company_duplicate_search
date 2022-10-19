@@ -1,0 +1,30 @@
+data:
+  processed_data_path: data/processed
+  external_data_path: data/external
+  interim_data_path: data/interim
+  raw_data_path: data/raw
+  embeddings_filename: draft_embeddings_paraphrase-MiniLM-L6-v2.pkl
+  legal_entities: legal_entities.txt
+  stopwords: stopwords.txt
+  chinese_data: cn.csv
+  preprocessed_df_name: preprocessed_data.csv
+model:
+  model_path: models
+  model_name: paraphrase-minilm-l6-v2
+indexing:
+  vector_config_path: src/index/vector_settings.json
+  elastic:
+    host: localhost
+    https: true
+    index_name: paraphrase-minilm-l6-v2_normalized
+streamlit:
+  title: Company duplicate search
+  local_css_path: css/style.css
+  remote_css_path: https://fonts.googleapis.com/icon?family=Material+Icons
+  icon: search
+  slider:
+    min_value: 5
+    max_value: 20
+    value: 5
+    step: 1
+
