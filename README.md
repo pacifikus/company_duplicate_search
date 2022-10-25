@@ -66,20 +66,20 @@ so our main quality metric has become **recall with fixed precision** that measu
 We will proceed from the following assumptions:
 - **36000** queries per month (DAU - **300**, average **4** queries per user per day)
 
-Server load: `36000 / (30 * 86400) = 0.013 RPS`
+Server load: `36000 / (30 * 86400) = 0,013 RPS`
 
-If each server response fits in **1MB**, then we generate traffic at 0.104 Mbps
+If each server response fits in **1MB**, then we generate traffic at **0,104 Mbps**
 
 Initially, there are **30.000 vectors** (rough estimation, we don't store full-duplicated embeddings)
-in the index of dimension 512 float64 => `30.000 * 384 * 8B = 92.16 MB` are needed for storage
+in the index of dimension 512 float64 => `30.000 * 384 * 8B = 92,16 MB` are needed for storage
 
-To store **metadata** (company names): we need `30.000 * 1KB = 29.3MB`
+To store **metadata** (company names): we need `30.000 * 1KB = 29,3MB`
 
-Expected **embeddings growth**: 1.000 vectors per month = `1.000 * 384 * 8B = 3.072MB`
+Expected **embeddings growth**: 1.000 vectors per month = `1.000 * 384 * 8B = 3,072MB`
 
-Expected **metadata growth**: `1.000 * 1KB = 0.97MB`
+Expected **metadata growth**: `1.000 * 1KB = 0,97MB`
 
-On the horizon of 1 year, we will need **165.92MB** of space
+On the horizon of 1 year, we will need **165,92MB** of space
 
 ## Experiments setup
 
