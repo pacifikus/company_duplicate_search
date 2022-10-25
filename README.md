@@ -35,7 +35,7 @@ Project organization
     │   └── data          <- Data folder with raw and external data
     └── params.yaml       <- Config file
 
-## Few requirements:
+## Few requirements
 - The most similar company names should be given to the user's request
 - The service has fast response time
 - Some parts of computation are moved to offline
