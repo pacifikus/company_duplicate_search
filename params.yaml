@@ -4,6 +4,7 @@ data:
   interim_data_path: data/interim
   raw_data_path: data/raw
   embeddings_filename: draft_embeddings_paraphrase-MiniLM-L6-v2.pkl
+  minhashembeddings_filename: minhashembeddings.pkl
   legal_entities: legal_entities.txt
   stopwords: stopwords.txt
   chinese_data: cn.csv
