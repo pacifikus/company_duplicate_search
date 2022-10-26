@@ -7,6 +7,10 @@ import cleanco
 import geonamescache
 import pandas as pd
 import pycountry
+
+from deep_translator import GoogleTranslator
+from langdetect import detect
+
 import yaml
 from unidecode import unidecode
 import click
@@ -77,6 +81,20 @@ def resolve_data_path(config):
     stopwords = get_stopwords(sw_path)
     return legal_entities, toponyms, stopwords
 
+def detect_language(text):
+    return detect(text)
+
+def translate_to_eng(text, logger):
+    try:
+        source_lang = detect_language(text)
+        if source_lang:
+            translated = GoogleTranslator(source=source_lang, target='en').translate(text=text)
+        else:
+            translated = GoogleTranslator(source='auto', target='en').translate(text=text)
+    except:
+        logger.error(f'Translation failed for {text}')
+        return ''
+    return translated
 
 def preprocess(text, config=None, legal_entities=None, stopwords=None, toponyms=None):
     if config:
