@@ -91,7 +91,7 @@ On the horizon of 1 year, we will need **165,92MB** of space
     - Python version: 3.7.14
     - OS: Linux-5.10.133+-x86_64-with-Ubuntu-18.04-bionic
 
-| Model                                 | Fixed Precision | Recall as Precision | 
+| Model                                 | Fixed Precision | Recall at Precision | 
 |---------------------------------------|-----------------|---------------------|
 | Tensorflow USE                        | 0.8             | 0.4469              | 
 | paraphrase-MiniLM-L6-v2               | 0.8             | 0.5182              | 
