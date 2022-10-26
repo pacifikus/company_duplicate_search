@@ -7,9 +7,27 @@ import click
 import pandas as pd
 import yaml
 
+from text_dedup.near_dedup import MinHashEmbedder
+
 sys.path.append(str(Path(__file__).resolve().parents[2]))
 from src.embedder import model
 
+from src.data.preprocess import detect_language, translate_to_eng
+
+def get_minhashembedding_raw(text, num_perm=128):
+    embedder = MinHashEmbedder(num_perm)
+    embeddings = embedder.embed(text)
+    return embeddings
+
+def get_minhashembedding_translated(text, logger, num_perm=128):
+    embedder = MinHashEmbedder(num_perm)
+    lang = detect_language(text)
+    if lang != 'en':
+        translated = translate_to_eng(text, logger)
+        embeddings = embedder.embed(translated)
+    else:
+        embeddings = embedder.embed(text)
+    return embeddings
 
 def encode_texts(texts):
     return model.encode(texts)
