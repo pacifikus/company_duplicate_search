@@ -97,6 +97,18 @@ On the horizon of 1 year, we will need **165,92MB** of space
 | paraphrase-MiniLM-L6-v2               | 0.8             | 0.5182              | 
 | paraphrase-multilingual-mpnet-base-v2 | 0.8             | 0.4908              |
 
+## Minimum production hardware requirements
+
+- Hardware
+    - CPU: 4 CPU Cores
+    - GPU: single GPU with at least 8 GB GPU RAM (btw, you can use only CPU model inference. See also [CPU inference optimization](https://youtu.be/okcvDWkyw2Y?t=23964))
+    - RAM: 16 GB
+    - System disk space: 3 GB
+    
+## Performance
+
+With minimum production requirements and 30.000 company names in ElasticSearch index the service can process at least 100 queries per seconds.
+Also we use Streamlit decorator `@st.cache` to optimize performance.
 
 ## How to run
 
